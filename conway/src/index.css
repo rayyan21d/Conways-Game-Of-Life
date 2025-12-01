@@ -1,0 +1,140 @@
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1a1a1a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0f0f13;
+  /* Darker background */
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #00ff00, #00ccff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.controls {
+  background: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #444;
+}
+
+.stats {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #888;
+  font-family: monospace;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.1s;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: #646cff;
+  transform: translateY(-2px);
+}
+
+.btn:focus,
+.btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn.start {
+  background-color: #004d00;
+  border-color: #00ff00;
+  color: #fff;
+}
+
+.btn.start:hover {
+  background-color: #006600;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.btn.stop {
+  background-color: #4d0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+
+.btn.stop:hover {
+  background-color: #660000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.sliders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="range"] {
+  margin-left: 10px;
+  accent-color: #00ff00;
+}

@@ -42,33 +42,33 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
         }
     };
 
-    const loop = (time: number) => {
-        if (running) {
-            const interval = 1000 / speed;
-            if (time - lastUpdateRef.current >= interval) {
-                grid.nextGeneration();
-                onGeneration();
-                lastUpdateRef.current = time;
-            }
-        }
-
-        const canvas = canvasRef.current;
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            if (ctx) {
-                draw(ctx);
-            }
-        }
-
-        requestRef.current = requestAnimationFrame(loop);
-    };
-
     useEffect(() => {
+        const loop = (time: number) => {
+            if (running) {
+                const interval = 1000 / speed;
+                if (time - lastUpdateRef.current >= interval) {
+                    grid.nextGeneration();
+                    onGeneration();
+                    lastUpdateRef.current = time;
+                }
+            }
+
+            const canvas = canvasRef.current;
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                if (ctx) {
+                    draw(ctx);
+                }
+            }
+
+            requestRef.current = requestAnimationFrame(loop);
+        };
+
         requestRef.current = requestAnimationFrame(loop);
         return () => {
             if (requestRef.current) cancelAnimationFrame(requestRef.current);
         };
-    }, [running, speed, grid]); // Re-bind loop if dependencies change
+    }, [running, speed, grid, onGeneration]); // Re-bind loop if dependencies change
 
     const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
         const canvas = canvasRef.current;

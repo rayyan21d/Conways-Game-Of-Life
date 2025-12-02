@@ -5,8 +5,8 @@ import { Controls } from './core/Controls';
 
 
 const CELL_SIZE = 5;
-const GRID_WIDTH = 50;
-const GRID_HEIGHT = 50;
+const GRID_WIDTH = 200;
+const GRID_HEIGHT = 100;
 
 function App() {
   // ref keeps the grid instance stable across re-renders
